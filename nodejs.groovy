@@ -15,5 +15,6 @@ job('created-job-via-groovy-script') {
         shell("npm install")
         shell("npm test")
         shell("docker build -t yosrimhamdi/first-demo --pull=true /var/lib/jenkins/workspace/created-job-via-groovy-script")
+        shell("docker push yosrimhamdi/first-demo:latest")
     }
 }

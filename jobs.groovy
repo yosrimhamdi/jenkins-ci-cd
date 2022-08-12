@@ -1,4 +1,4 @@
-job('created-job-via-groovy-script') {
+job('node-app') {
     scm {
         git('https://github.com/yosrimhamdi/jenkins-ci-cd') {
             node / gitConfigName('Yosri Mhamdi')
@@ -14,7 +14,7 @@ job('created-job-via-groovy-script') {
     steps {
         shell("npm install")
         shell("npm test")
-        shell("docker build -t yosrimhamdi/first-demo --pull=true /var/lib/jenkins/workspace/created-job-via-groovy-script")
+        shell("docker build -t yosrimhamdi/first-demo --pull=true /var/lib/jenkins/workspace/node-app")
         shell("docker push yosrimhamdi/first-demo:latest")
     }
 }

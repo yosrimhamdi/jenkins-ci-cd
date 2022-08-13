@@ -1,7 +1,6 @@
 node {
    stage('Preparation') {
      checkout scm
-     sh "git rev-parse --short HEAD > .git/commit-id"                        
    }
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
